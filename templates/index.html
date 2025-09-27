@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDown - Descarga Todo</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/0jStJm8H/IMG-9990.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        accent: '#8B5CF6',
+                        success: '#059669',
+                        background: '#F8FAFC',
+                        textdark: '#1E293B'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'Roboto', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white min-h-screen font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <img src="https://i.postimg.cc/0jStJm8H/IMG-9990.png" alt="Logo" class="w-12 h-12">
+                    <h1 class="text-2xl font-bold text-textdark">WebDown</h1>
+                </div>
+                
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Hero Section -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent mb-6 px-4 py-2">
+                Descarga Todo
+            </h1>
+            <h2 class="text-2xl md:text-3xl font-bold text-textdark mb-6">
+                El Extractor Más Potente de la Web
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+                Encuentra y descarga cualquier archivo de cualquier sitio web. Imágenes, videos, documentos y más.
+            </p>
+            <div class="mb-8">
+                <a 
+                    href="#urlInput" 
+                    class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white text-lg font-semibold rounded-xl hover:from-blue-600 hover:to-green-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    Empezar Ahora
+                </a>
+            </div>
+            <div class="mb-8">
+                <img 
+                    src="https://i.postimg.cc/c4Hb1ySX/IMG-9971.png" 
+                    alt="Web Download Manager" 
+                    class="mx-auto h-64 w-auto object-contain rounded-2xl"
+                >
+            </div>
+        </div>
+
+        <!-- Cómo Funciona Section -->
+        <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8 mb-12">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-textdark mb-4">¿Cómo Funciona?</h2>
+                <p class="text-lg text-gray-600">Descargar archivos nunca fue tan fácil. Solo sigue estos 3 simples pasos:</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Step 1 -->
+                <div class="text-center group">
+                    <div class="relative mb-6">
+                        <div class="w-24 h-24 bg-white rounded-full shadow-lg mx-auto flex items-center justify-center group-hover:shadow-xl transition-shadow">
+                            <img 
+                                src="https://i.postimg.cc/25QsbsSn/IMG-9984.png" 
+                                alt="Copiar URL" 
+                                class="w-16 h-16 object-contain"
+                            >
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-textdark mb-3">Copiar URL</h3>
+                    <p class="text-gray-600">Copia la URL de la página web que contiene los archivos que quieres descargar</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center group">
+                    <div class="relative mb-6">
+                        <div class="w-24 h-24 bg-white rounded-full shadow-lg mx-auto flex items-center justify-center group-hover:shadow-xl transition-shadow">
+                            <img 
+                                src="https://i.postimg.cc/8CR2J2zh/IMG-9986.png" 
+                                alt="Pegar en buscador" 
+                                class="w-16 h-16 object-contain"
+                            >
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-textdark mb-3">Pegar en Buscador</h3>
+                    <p class="text-gray-600">Pega la URL en nuestro buscador y presiona "Escanear" para encontrar todos los archivos</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center group">
+                    <div class="relative mb-6">
+                        <div class="w-24 h-24 bg-white rounded-full shadow-lg mx-auto flex items-center justify-center group-hover:shadow-xl transition-shadow">
+                            <img 
+                                src="https://i.postimg.cc/xdvwJw1v/IMG-9985.png" 
+                                alt="Descargar archivos" 
+                                class="w-16 h-16 object-contain"
+                            >
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-textdark mb-3">Descargar Archivos</h3>
+                    <p class="text-gray-600">Elige los archivos que necesitas y descárgalos directamente a tu dispositivo</p>
+                </div>
+            </div>
+
+            <!-- Additional info -->
+            <div class="text-center mt-10">
+                <div class="inline-flex items-center space-x-2 bg-white bg-opacity-60 backdrop-blur-sm px-6 py-3 rounded-full">
+                    <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span class="text-textdark font-medium">¡100% Gratis y Seguro!</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- URL Input Section -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-12">
+            <div class="text-center mb-6">
+                <h2 class="text-3xl font-bold text-textdark mb-2">Descarga Todo</h2>
+                <p class="text-gray-600">Ingresa cualquier URL y descubre todos sus archivos</p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <div class="flex-1">
+                    <input 
+                        type="url" 
+                        id="urlInput" 
+                        placeholder="Ingresa la URL a escanear (ej: https://example.com)" 
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors"
+                    >
+                </div>
+                <button 
+                    id="scanBtn" 
+                    class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors font-medium flex items-center justify-center space-x-2 min-w-[140px]"
+                >
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <span>Escanear</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loadingState" class="hidden bg-black rounded-xl shadow-sm border border-gray-200 p-8 mb-8 overflow-hidden">
+            <div class="text-center mb-4">
+                <div class="flex items-center justify-center space-x-3 mb-4">
+                    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-green-400"></div>
+                    <span class="text-lg text-green-400 font-mono">ACCEDIENDO AL SERVIDOR...</span>
+                </div>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-4 font-mono text-sm text-green-400 h-64 overflow-hidden">
+                <div id="hackingAnimation" class="space-y-1">
+                    <!-- Animation content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div id="resultsSection" class="hidden">
+            <!-- Statistics -->
+            <div id="statsSection" class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm text-gray-600">Total de Archivos</p>
+                            <p id="totalFiles" class="text-2xl font-bold text-textdark">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-secondary bg-opacity-10 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm text-gray-600">Imágenes</p>
+                            <p id="imageFiles" class="text-2xl font-bold text-textdark">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-accent bg-opacity-10 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm text-gray-600">Videos</p>
+                            <p id="videoFiles" class="text-2xl font-bold text-textdark">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-orange-500 bg-opacity-10 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm text-gray-600">Documentos</p>
+                            <p id="documentFiles" class="text-2xl font-bold text-textdark">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-4 mb-6">
+                <div class="flex flex-wrap gap-2">
+                    <button class="filter-btn active px-4 py-2 rounded-lg bg-primary text-white" data-type="all">
+                        Todos los archivos
+                    </button>
+                    <button class="filter-btn px-4 py-2 rounded-lg bg-gray-100 text-textdark hover:bg-gray-200" data-type="images">
+                        Imágenes
+                    </button>
+                    <button class="filter-btn px-4 py-2 rounded-lg bg-gray-100 text-textdark hover:bg-gray-200" data-type="videos">
+                        Videos
+                    </button>
+                    <button class="filter-btn px-4 py-2 rounded-lg bg-gray-100 text-textdark hover:bg-gray-200" data-type="documents">
+                        Documentos
+                    </button>
+                    <button class="filter-btn px-4 py-2 rounded-lg bg-gray-100 text-textdark hover:bg-gray-200" data-type="audio">
+                        Audio
+                    </button>
+                    <button class="filter-btn px-4 py-2 rounded-lg bg-gray-100 text-textdark hover:bg-gray-200" data-type="archives">
+                        Archivos
+                    </button>
+                    <button class="filter-btn px-4 py-2 rounded-lg bg-gray-100 text-textdark hover:bg-gray-200" data-type="others">
+                        Otros
+                    </button>
+                </div>
+            </div>
+
+            <!-- Files List -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200">
+                <div class="p-4 border-b border-gray-200">
+                    <h3 class="text-lg font-semibold text-textdark">Archivos Encontrados</h3>
+                </div>
+                <div id="filesList" class="divide-y divide-gray-200">
+                    <!-- Files will be populated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Section -->
+        <div id="errorSection" class="hidden bg-red-50 border border-red-200 rounded-xl p-6 mb-8">
+            <div class="flex items-center space-x-3">
+                <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <div>
+                    <h3 class="text-lg font-semibold text-red-800">Error al escanear la URL</h3>
+                    <p id="errorMessage" class="text-red-600 mt-1"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FAQ Section -->
+    <section class="bg-gray-50 py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-textdark mb-4">Preguntas Frecuentes</h2>
+                <p class="text-lg text-gray-600">Resuelve tus dudas sobre el extractor de archivos</p>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 hover:bg-gray-50 transition-colors flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-textdark">¿Qué tipos de archivos puedo descargar?</h3>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform faq-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-gray-600">Puedes descargar imágenes (JPG, PNG, GIF, etc.), videos (MP4, AVI, MKV, etc.), documentos (PDF, DOC, XLS, etc.), archivos comprimidos (ZIP, RAR, etc.), archivos de audio y muchos más tipos de archivos.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 hover:bg-gray-50 transition-colors flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-textdark">¿Es seguro usar esta herramienta?</h3>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform faq-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-gray-600">Sí, completamente seguro. No almacenamos ningún archivo en nuestros servidores. Solo extraemos los enlaces directos de descarga de las páginas web y te permitimos descargarlos directamente desde su ubicación original.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 hover:bg-gray-50 transition-colors flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-textdark">¿Hay límite en el número de descargas?</h3>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform faq-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-gray-600">No hay límites en el número de archivos que puedes extraer o descargar. Puedes escanear tantas URLs como necesites y descargar todos los archivos que encuentres.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 hover:bg-gray-50 transition-colors flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-textdark">¿Funciona con cualquier sitio web?</h3>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform faq-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-gray-600">La herramienta funciona con la mayoría de sitios web públicos que contienen enlaces directos a archivos. Algunos sitios con protecciones especiales o contenido privado pueden no ser compatibles.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 hover:bg-gray-50 transition-colors flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-textdark">¿Puedo copiar los enlaces sin descargar?</h3>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform faq-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-gray-600">¡Absolutamente! Cada archivo encontrado tiene un botón "Copiar" que te permite copiar la URL directa al portapapeles para usar en otras aplicaciones o gestores de descarga.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-textdark text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-lg">
+                Hecho con ❤️ por 
+                <a 
+                    href="https://fivel.ink/david" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="text-primary hover:text-secondary transition-colors font-semibold"
+                >
+                    David Rt
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        let allFiles = [];
+        let currentFilter = 'all';
+
+        // Event listeners
+        document.getElementById('scanBtn').addEventListener('click', scanUrl);
+        document.getElementById('urlInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                scanUrl();
+            }
+        });
+
+        // Filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                currentFilter = this.dataset.type;
+                updateFilterButtons();
+                displayFiles();
+            });
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const arrow = this.querySelector('.faq-arrow');
+                
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    arrow.style.transform = 'rotate(180deg)';
+                } else {
+                    content.classList.add('hidden');
+                    arrow.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+
+        function updateFilterButtons() {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if (btn.dataset.type === currentFilter) {
+                    btn.classList.add('active', 'bg-primary', 'text-white');
+                    btn.classList.remove('bg-gray-100', 'text-textdark');
+                } else {
+                    btn.classList.remove('active', 'bg-primary', 'text-white');
+                    btn.classList.add('bg-gray-100', 'text-textdark');
+                }
+            });
+        }
+
+        async function scanUrl() {
+            const url = document.getElementById('urlInput').value.trim();
+            
+            if (!url) {
+                alert('Por favor ingresa una URL válida');
+                return;
+            }
+
+            // Show loading state
+            showLoading();
+
+            try {
+                const response = await fetch('/scan', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ url: url })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    allFiles = data.files;
+                    displayResults();
+                    updateStatistics();
+                } else {
+                    showError(data.error);
+                }
+            } catch (error) {
+                showError('Error de conexión: ' + error.message);
+            }
+
+            hideLoading();
+        }
+
+        function showLoading() {
+            document.getElementById('loadingState').classList.remove('hidden');
+            document.getElementById('resultsSection').classList.add('hidden');
+            document.getElementById('errorSection').classList.add('hidden');
+            startHackingAnimation();
+        }
+
+        function hideLoading() {
+            document.getElementById('loadingState').classList.add('hidden');
+            stopHackingAnimation();
+        }
+
+        let hackingInterval;
+        let hackingLines = [];
+
+        function startHackingAnimation() {
+            const animationContainer = document.getElementById('hackingAnimation');
+            hackingLines = [];
+            
+            const hackingMessages = [
+                '> Iniciando conexión segura...',
+                '> Estableciendo túnel SSH...',
+                '> Accediendo a servidor remoto 192.168.1.247...',
+                '> Autenticación exitosa',
+                '> Escaneando puertos disponibles...',
+                '> Puerto 80: ABIERTO',
+                '> Puerto 443: ABIERTO', 
+                '> Puerto 8080: ABIERTO',
+                '> Analizando estructura del sitio web...',
+                '> Inyectando script de extracción...',
+                '> Decodificando HTML...',
+                '> Extrayendo metadatos...',
+                '> Identificando archivos multimedia...',
+                '> Procesando enlaces directos...',
+                '> Validando integridad de archivos...',
+                '> Calculando checksums MD5...',
+                '> Bypass de protecciones anti-bot...',
+                '> Analizando robots.txt...',
+                '> Mapeando estructura de directorios...',
+                '> Extracción completada exitosamente'
+            ];
+
+            const randomCodes = [
+                'af8b9c2e1d4f7a3e9b8c2d1f',
+                'x0r_encrypt_key_9f8e7d6c',
+                'payload_injection_successful',
+                'buffer_overflow_detected',
+                'ssl_handshake_complete',
+                'token_validation_bypass',
+                'cors_policy_override',
+                'data_stream_established'
+            ];
+
+            let messageIndex = 0;
+            
+            hackingInterval = setInterval(() => {
+                if (messageIndex < hackingMessages.length) {
+                    // Add main message
+                    addHackingLine(hackingMessages[messageIndex], 'text-green-400');
+                    
+                    // Occasionally add random technical codes
+                    if (Math.random() > 0.6) {
+                        setTimeout(() => {
+                            const randomCode = randomCodes[Math.floor(Math.random() * randomCodes.length)];
+                            addHackingLine(`  [DEBUG] ${randomCode}`, 'text-yellow-400');
+                        }, 200);
+                    }
+                    
+                    messageIndex++;
+                } else {
+                    // Loop back for continuous animation
+                    messageIndex = Math.floor(hackingMessages.length * 0.7); // Start from 70% through
+                }
+            }, 400 + Math.random() * 300); // Variable timing for realism
+        }
+
+        function addHackingLine(text, colorClass = 'text-green-400') {
+            const animationContainer = document.getElementById('hackingAnimation');
+            const line = document.createElement('div');
+            line.className = `${colorClass} opacity-0 transition-opacity duration-300`;
+            line.textContent = text;
+            
+            hackingLines.push(line);
+            animationContainer.appendChild(line);
+            
+            // Animate in
+            setTimeout(() => {
+                line.classList.remove('opacity-0');
+            }, 50);
+            
+            // Keep only last 15 lines visible
+            if (hackingLines.length > 15) {
+                const oldLine = hackingLines.shift();
+                if (oldLine && oldLine.parentNode) {
+                    oldLine.style.opacity = '0';
+                    setTimeout(() => {
+                        if (oldLine.parentNode) {
+                            oldLine.parentNode.removeChild(oldLine);
+                        }
+                    }, 300);
+                }
+            }
+            
+            // Auto scroll to bottom
+            animationContainer.scrollTop = animationContainer.scrollHeight;
+        }
+
+        function stopHackingAnimation() {
+            if (hackingInterval) {
+                clearInterval(hackingInterval);
+                hackingInterval = null;
+            }
+            hackingLines = [];
+        }
+
+        function showError(message) {
+            document.getElementById('errorMessage').textContent = message;
+            document.getElementById('errorSection').classList.remove('hidden');
+            document.getElementById('resultsSection').classList.add('hidden');
+        }
+
+        function displayResults() {
+            document.getElementById('resultsSection').classList.remove('hidden');
+            document.getElementById('errorSection').classList.add('hidden');
+            displayFiles();
+        }
+
+        function updateStatistics() {
+            const stats = {
+                total: allFiles.length,
+                images: allFiles.filter(f => f.type === 'images').length,
+                videos: allFiles.filter(f => f.type === 'videos').length,
+                documents: allFiles.filter(f => f.type === 'documents').length
+            };
+
+            document.getElementById('totalFiles').textContent = stats.total;
+            document.getElementById('imageFiles').textContent = stats.images;
+            document.getElementById('videoFiles').textContent = stats.videos;
+            document.getElementById('documentFiles').textContent = stats.documents;
+        }
+
+        function displayFiles() {
+            const filesList = document.getElementById('filesList');
+            const filteredFiles = currentFilter === 'all' ? 
+                allFiles : 
+                allFiles.filter(file => file.type === currentFilter);
+
+            if (filteredFiles.length === 0) {
+                filesList.innerHTML = `
+                    <div class="p-8 text-center">
+                        <svg class="w-12 h-12 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        <p class="text-gray-500">No se encontraron archivos de este tipo</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filesList.innerHTML = filteredFiles.map(file => `
+                <div class="p-4 hover:bg-gray-50 transition-colors">
+                    <div class="flex flex-col space-y-4">
+                        <!-- File info and actions -->
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4 flex-1 min-w-0">
+                                <div class="w-10 h-10 bg-${getTypeColor(file.type)} bg-opacity-10 rounded-lg flex items-center justify-center">
+                                    ${getTypeIcon(file.type)}
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm font-medium text-textdark truncate" title="${file.filename}">${file.filename}</p>
+                                    <div class="flex items-center space-x-4 mt-1">
+                                        <span class="text-xs text-gray-500">${getTypeLabel(file.type)}</span>
+                                        <span class="text-xs text-gray-500">${file.size}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button 
+                                    onclick="copyToClipboard('${file.url}')"
+                                    class="px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors flex items-center space-x-2"
+                                    title="Copiar URL"
+                                >
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                    </svg>
+                                    <span class="hidden sm:inline">Copiar</span>
+                                </button>
+                                <button 
+                                    onclick="downloadFile('${encodeURIComponent(file.url)}', '${encodeURIComponent(file.filename)}')"
+                                    class="px-3 py-2 bg-success text-white rounded-lg hover:bg-green-700 transition-colors flex items-center space-x-2"
+                                    title="Descargar archivo"
+                                >
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                    <span class="hidden sm:inline">Descargar</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Preview section for images and videos -->
+                        ${getFilePreview(file)}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function downloadFile(url, filename) {
+            const downloadUrl = `/download?url=${url}&filename=${filename}`;
+            const link = document.createElement('a');
+            link.href = downloadUrl;
+            link.download = decodeURIComponent(filename);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function getTypeColor(type) {
+            const colors = {
+                'images': 'secondary',
+                'videos': 'accent',
+                'documents': 'orange-500',
+                'audio': 'yellow-500',
+                'archives': 'gray-500',
+                'executables': 'red-500',
+                'others': 'gray-400'
+            };
+            return colors[type] || 'gray-400';
+        }
+
+        function getTypeIcon(type) {
+            const icons = {
+                'images': '<svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>',
+                'videos': '<svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>',
+                'documents': '<svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>',
+                'audio': '<svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>',
+                'archives': '<svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>'
+            };
+            return icons[type] || '<svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>';
+        }
+
+        function getTypeLabel(type) {
+            const labels = {
+                'images': 'Imagen',
+                'videos': 'Video',
+                'documents': 'Documento',
+                'audio': 'Audio',
+                'archives': 'Archivo',
+                'executables': 'Ejecutable',
+                'others': 'Otro'
+            };
+            return labels[type] || 'Archivo';
+        }
+
+        function getFilePreview(file) {
+            if (file.type === 'images') {
+                return `
+                    <div class="mt-2">
+                        <div class="bg-gray-100 rounded-lg p-4 max-w-md">
+                            <img 
+                                src="${file.url}" 
+                                alt="${file.filename}" 
+                                class="max-w-full h-auto rounded-lg shadow-sm"
+                                style="max-height: 200px; object-fit: contain;"
+                                onerror="this.parentElement.innerHTML='<div class=\\'text-gray-500 text-sm text-center py-4\\'>No se puede mostrar la vista previa</div>'"
+                            >
+                        </div>
+                    </div>
+                `;
+            } else if (file.type === 'videos') {
+                return `
+                    <div class="mt-2">
+                        <div class="bg-gray-100 rounded-lg p-4 max-w-md">
+                            <video 
+                                controls 
+                                class="max-w-full h-auto rounded-lg shadow-sm"
+                                style="max-height: 200px;"
+                                preload="metadata"
+                            >
+                                <source src="${file.url}" type="video/mp4">
+                                <source src="${file.url}" type="video/webm">
+                                <source src="${file.url}" type="video/ogg">
+                                Tu navegador no soporta la reproducción de video.
+                            </video>
+                        </div>
+                    </div>
+                `;
+            }
+            return '';
+        }
+
+        async function copyToClipboard(url) {
+            try {
+                await navigator.clipboard.writeText(url);
+                showNotification('URL copiada al portapapeles', 'success');
+            } catch (err) {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = url;
+                textArea.style.position = 'fixed';
+                textArea.style.left = '-999999px';
+                textArea.style.top = '-999999px';
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                
+                try {
+                    document.execCommand('copy');
+                    showNotification('URL copiada al portapapeles', 'success');
+                } catch (err) {
+                    showNotification('Error al copiar la URL', 'error');
+                }
+                
+                document.body.removeChild(textArea);
+            }
+        }
+
+        function showNotification(message, type = 'success') {
+            // Remove existing notifications
+            const existingNotifications = document.querySelectorAll('.notification');
+            existingNotifications.forEach(notification => notification.remove());
+
+            const notification = document.createElement('div');
+            notification.className = `notification fixed top-4 right-4 px-6 py-3 rounded-lg shadow-lg z-50 transition-all duration-300 ${
+                type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
+            }`;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+                notification.style.opacity = '1';
+            }, 100);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                notification.style.opacity = '0';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
